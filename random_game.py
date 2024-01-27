@@ -149,7 +149,23 @@ print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 game_in_progress = True
 while game_in_progress:
-    print("\nSTEP 1: PLAYER 1 MUST CHOOSE TO PICK UP FROM DECK OR DISCARD\n")
+    print("\nSTEP 1: WE MUST BE SURE TO REPLACE THE DECK WITH THE DISCARD PILE AND TURN ONE CARD OVER IF THE DECK IS EMPTY\n")
+    if(len(deck) == 0):
+        print("\nTHE DECK HAS BEEN FOUND TO BE EMPTY. THE DISCARD PILE WILL BE USED TO REPLACE THE DECK.\n")
+        for i in range(len(discard_pile) - 1, -1, -1):
+            deck.append(discard_pile[i])
+            discard_pile.pop(i)
+        # Add shuffling in the future here
+        
+        # Start the discard pile with the top card from the deck
+        discard_pile.append(deck[0])
+        deck.pop(0)
+    else:
+        print("\nTHE DECK IS NOT EMPTY. NO ACTION WILL BE TAKEN\n")
+            
+
+    
+    print("\nSTEP 2: PLAYER 1 MUST CHOOSE TO PICK UP FROM DECK OR DISCARD\n")
     choice = random.randint(0,1)    # 0 -> deck, 1 -> discard
     if(choice == 0):
         print("\nPLAYER 1 HAS CHOSEN TO PICK UP FROM THE DECK")
@@ -178,6 +194,15 @@ while game_in_progress:
         
 
     time.sleep(1)
+
+    print("\nSTEP 3: PLAYER 1 MUST CHOOSE WHICH CARD TO DISCARD\n")
+
+    card_to_discard_index = random.randint(0, len(player_one_hand) - 1)
+
+    print("PLAYER 1 HAS CHOSEN TO DISCARD " + card_to_string(player_one_hand[card_to_discard_index]))
+
+    player_one_hand.pop(card_to_discard_index)
+    
         
         
 
