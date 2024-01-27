@@ -210,6 +210,69 @@ while game_in_progress:
 
     readable_p1_deck = read_deck(player_one_hand)
     print("PLAYER 1s HAND AFTER DISCARDING TO DISCARD PILE: \n" + str(readable_p1_deck) + "\n\n")
+
+
+    print("\nSTEP 4: WE MUST BE SURE TO REPLACE THE DECK WITH THE DISCARD PILE AND TURN ONE CARD OVER IF THE DECK IS EMPTY\n")
+    if(len(deck) == 0):
+        print("\nTHE DECK HAS BEEN FOUND TO BE EMPTY. THE DISCARD PILE WILL BE USED TO REPLACE THE DECK.\n")
+        for i in range(len(discard_pile) - 1, -1, -1):
+            deck.append(discard_pile[i])
+            discard_pile.pop(i)
+        # Add shuffling in the future here
+        
+        # Start the discard pile with the top card from the deck
+        discard_pile.append(deck[0])
+        deck.pop(0)
+    else:
+        print("\nTHE DECK IS NOT EMPTY. NO ACTION WILL BE TAKEN\n")
+            
+
+    
+    print("\nSTEP 5: PLAYER 2 MUST CHOOSE TO PICK UP FROM DECK OR DISCARD\n")
+    choice = random.randint(0,1)    # 0 -> deck, 1 -> discard
+    if(choice == 0):
+        print("\nPLAYER 2 HAS CHOSEN TO PICK UP FROM THE DECK")
+        player_two_hand.append(deck[0])
+        deck.pop(0)
+
+        readable_p2_deck = read_deck(player_two_hand)
+        print("PLAYER 2s HAND AFTER TAKING TOP CARD FROM DECK: \n" + str(readable_p2_deck) + "\n\n")
+        
+        readable_deck = read_deck(deck)
+        print("DECK AFTER PLAYER TOOK TOP CARD: \n" + str(readable_deck) + "\n\n")
+
+        
+        
+    else:
+        print("\nPLAYER 2 HAS CHOSEN TO PICK UP FROM THE DISCARD PILE")
+        player_two_hand.insert(0, discard_pile[0])
+        discard_pile.pop(0)
+
+        readable_p2_deck = read_deck(player_two_hand)
+        print("PLAYER 2s HAND AFTER TAKING TOP CARD FROM DISCARD PILE: \n" + str(readable_p2_deck) + "\n\n")
+        
+        readable_discard_pile = read_deck(discard_pile)
+        print("DISCARD PILE AFTER PLAYER TOOK TOP CARD: \n" + str(readable_discard_pile) + "\n\n")
+
+        
+
+    time.sleep(1)
+
+    print("\n\nSTEP 6: PLAYER 2 MUST CHOOSE WHICH CARD TO DISCARD\n\n")
+
+    card_to_discard_index = random.randint(0, len(player_two_hand) - 1)
+
+    print("PLAYER 2 HAS CHOSEN TO DISCARD " + card_to_string(player_two_hand[card_to_discard_index]) + "\n\n")
+
+    discard_pile.insert(0, player_two_hand[card_to_discard_index])
+
+    player_two_hand.pop(card_to_discard_index)
+
+    readable_discard_pile = read_deck(discard_pile)
+    print("DISCARD PILE AFTER PLAYER DISCARDED: \n" + str(readable_discard_pile) + "\n\n")
+
+    readable_p2_deck = read_deck(player_two_hand)
+    print("PLAYER 2s HAND AFTER DISCARDING TO DISCARD PILE: \n" + str(readable_p2_deck) + "\n\n")
     
     
         
