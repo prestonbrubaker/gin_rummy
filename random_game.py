@@ -61,6 +61,23 @@ def get_card_dictionary():
 
     return suits, values
 
+
+def card_to_string(card):
+    suits, values = get_card_dictionary()
+    
+    # Split the encoded card to get suit and value codes
+    encoded_card = card[0].split(',')
+    suit_code = ','.join(encoded_card[:2])
+    value_code = ','.join(encoded_card[2:])
+
+    # Translate codes to readable suit and value
+    suit = suits[suit_code]
+    value = values[value_code]
+
+    return f"{value} of {suit}"
+
+
+
 def read_deck(deck):
     suits, values = get_card_dictionary()
     readable_deck = []
@@ -80,3 +97,17 @@ shuffled_deck = create_shuffled_deck()
 readable_shuffled_deck = read_deck(shuffled_deck)
 print(str(shuffled_deck) + "\n\n\n")
 print(str(readable_shuffled_deck))
+
+player_one_hand = []
+player_two_hand = []
+
+# Deal cards to each player
+for i in range(20)):
+    if( i % 2 == 0):
+        player_one_hand.append(shuffled_deck[i])
+        print("Player 1 dealt " card_to_string(shuffled_deck[i]))
+    else:
+        player_two_hand.append(shuffled_deck[i])
+        print("Player 2 dealt " card_to_string(shuffled_deck[i]))
+    
+    
