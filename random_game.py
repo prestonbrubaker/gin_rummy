@@ -105,10 +105,10 @@ player_two_hand = []
 for i in range(20):
     if( i % 2 == 0):
         player_one_hand.append(shuffled_deck[i])
-        print("Player 1 dealt " + card_to_string(shuffled_deck[i]) + "\n\n")
+        print("Player 1 dealt " + card_to_string(shuffled_deck[i]))
     else:
         player_two_hand.append(shuffled_deck[i])
-        print("Player 2 dealt " + card_to_string(shuffled_deck[i]) + "\n\n")
+        print("Player 2 dealt " + card_to_string(shuffled_deck[i]))
 
 # Remove dealt card from the deck to create deck
 deck = []
