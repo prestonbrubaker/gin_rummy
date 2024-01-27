@@ -122,7 +122,7 @@ for i in range(19, -1, -1):
     deck.pop(i)
 
 readable_deck = read_deck(deck)
-print("DECK AFTER DEALING: + \n" + str(readable_deck) + "\n\n")
+print("DECK AFTER DEALING: \n" + str(readable_deck) + "\n\n")
 
     
     
