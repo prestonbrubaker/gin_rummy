@@ -113,6 +113,7 @@ for i in range(20):
 # Remove dealt card from the deck to create deck
 deck = []
 deck = shuffled_deck
+print(deck)
 for i in range(19, -1, -1):
     deck[i].pop()
 
