@@ -113,7 +113,7 @@ for i in range(20):
 # Remove dealt card from the deck to create deck
 deck = []
 
-for i in range(len(shuffled_deck):
+for i in range(len(shuffled_deck)):
     deck.append(shuffled_deck[i])
 print(deck)
 for i in range(19, -1, -1):
