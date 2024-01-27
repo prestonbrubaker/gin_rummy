@@ -109,5 +109,15 @@ for i in range(20):
     else:
         player_two_hand.append(shuffled_deck[i])
         print("Player 2 dealt " + card_to_string(shuffled_deck[i]))
+
+# Remove dealt card from the deck to create deck
+deck = []
+deck = shuffled_deck
+for i in range(19, -1, -1):
+    deck[i].pop()
+
+readable_deck = read_deck(deck)
+print(str(readable_deck))
+
     
     
