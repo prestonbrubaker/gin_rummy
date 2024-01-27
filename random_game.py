@@ -102,7 +102,7 @@ player_one_hand = []
 player_two_hand = []
 
 # Deal cards to each player
-for i in range(20)):
+for i in range(20):
     if( i % 2 == 0):
         player_one_hand.append(shuffled_deck[i])
         print("Player 1 dealt " card_to_string(shuffled_deck[i]))
