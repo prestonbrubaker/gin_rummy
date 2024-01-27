@@ -182,7 +182,7 @@ while game_in_progress:
         
     else:
         print("\nPLAYER 1 HAS CHOSEN TO PICK UP FROM THE DISCARD PILE")
-        player_one_hand.append(discard_pile[0])
+        player_one_hand.insert(0, discard_pile[0])
         discard_pile.pop(0)
 
         readable_p1_deck = read_deck(player_one_hand)
@@ -195,13 +195,22 @@ while game_in_progress:
 
     time.sleep(1)
 
-    print("\nSTEP 3: PLAYER 1 MUST CHOOSE WHICH CARD TO DISCARD\n")
+    print("\n\nSTEP 3: PLAYER 1 MUST CHOOSE WHICH CARD TO DISCARD\n\n")
 
     card_to_discard_index = random.randint(0, len(player_one_hand) - 1)
 
-    print("PLAYER 1 HAS CHOSEN TO DISCARD " + card_to_string(player_one_hand[card_to_discard_index]))
+    print("PLAYER 1 HAS CHOSEN TO DISCARD " + card_to_string(player_one_hand[card_to_discard_index]) + "\n\n")
+
+    discard_pile.insert(0, player_one_hand[card_to_discard_index])
 
     player_one_hand.pop(card_to_discard_index)
+
+    readable_discard_pile = read_deck(discard_pile)
+    print("DISCARD PILE AFTER PLAYER DISCARDED: \n" + str(readable_discard_pile) + "\n\n")
+
+    readable_p1_deck = read_deck(player_one_hand)
+    print("PLAYER 1s HAND AFTER DISCARDING TO DISCARD PILE: \n" + str(readable_p1_deck) + "\n\n")
+    
     
         
         
