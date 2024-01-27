@@ -131,5 +131,15 @@ readable_p2_deck = read_deck(player_two_hand)
 print("PLAYER 1s HAND: \n" + str(readable_p1_deck) + "\n\n")
 print("PLAYER 2s HAND: \n" + str(readable_p2_deck) + "\n\n")
 
+# Turn first card from the deck over
+discard_pile = []
+discard_pile.append(deck[0])
+deck.pop(0)
+
+readable_discard_pile = read_deck(discard_pile)
+print("CARD IN DISCARD PILE TO START: \n" + str(readable_discard_pile) + "\n\n")
+
+readable_deck = read_deck(deck)
+print("DECK AFTER FLIPPING: \n" + str(readable_deck) + "\n\n")
     
     
