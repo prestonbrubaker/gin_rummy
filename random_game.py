@@ -5,32 +5,32 @@ def create_shuffled_deck():
     deck = []
 
     # Encode suits
-    suits = {'hearts': '00', 
-             'diamonds': '01', 
-             'clubs': '10', 
-             'spades': '11'}
+    suits = {'hearts': '0,0', 
+             'diamonds': '0,1', 
+             'clubs': '1,0', 
+             'spades': '1,1'}
 
     # Encode values
     values = {
-        'ace': '0001', 
-        '2': '0010', 
-        '3': '0011',
-        '4': '0100', 
-        '5': '0101', 
-        '6': '0110',
-        '7': '0111', 
-        '8': '1000', 
-        '9': '1001',
-        '10': '1010', 
-        'jack': '1011', 
-        'queen': '1100',
-        'king': '1101'
+        'ace': '0,0,0,1', 
+        '2': '0,0,1,0', 
+        '3': '0,0,1,1',
+        '4': '0,1,0,0', 
+        '5': '0,1,0,1', 
+        '6': '0,1,1,0',
+        '7': '0,1,1,1', 
+        '8': '1,0,0,0', 
+        '9': '1,0,0,1',
+        '10': '1,0,1,0', 
+        'jack': '1,0,1,1', 
+        'queen': '1,1,0,0',
+        'king': '1,1,0,1'
     }
 
     # Generate deck
     for suit, suit_code in suits.items():
         for value, value_code in values.items():
-            deck.append([suit_code, value_code])
+            deck.append([suit_code + ',' + value_code])
 
     # Shuffle deck
     random.shuffle(deck)
@@ -39,24 +39,24 @@ def create_shuffled_deck():
 
 def get_card_dictionary():
     # Reverse mapping
-    suits = {'00': 'hearts', 
-             '01': 'diamonds', 
-             '10': 'clubs', 
-             '11': 'spades'}
+    suits = {'0,0': 'hearts', 
+             '0,1': 'diamonds', 
+             '1,0': 'clubs', 
+             '1,1': 'spades'}
     values = {
-        '0001': 'ace', 
-        '0010': '2', 
-        '0011': '3',
-        '0100': '4', 
-        '0101': '5', 
-        '0110': '6',
-        '0111': '7', 
-        '1000': '8', 
-        '1001': '9',
-        '1010': '10', 
-        '1011': 'jack', 
-        '1100': 'queen',
-        '1101': 'king'
+        '0,0,0,1': 'ace', 
+        '0,0,1,0': '2', 
+        '0,0,1,1': '3',
+        '0,1,0,0': '4', 
+        '0,1,0,1': '5', 
+        '0,1,1,0': '6',
+        '0,1,1,1': '7', 
+        '1,0,0,0': '8', 
+        '1,0,0,1': '9',
+        '1,0,1,0': '10', 
+        '1,0,1,1': 'jack', 
+        '1,1,0,0': 'queen',
+        '1,1,0,1': 'king'
     }
 
     return suits, values
@@ -66,7 +66,9 @@ def read_deck(deck):
     readable_deck = []
 
     for card in deck:
-        suit_code, value_code = card
+        encoded_card = card[0].split(',')
+        suit_code = ','.join(encoded_card[:2])
+        value_code = ','.join(encoded_card[2:])
         suit = suits[suit_code]
         value = values[value_code]
         readable_deck.append(f"{value} of {suit}")
