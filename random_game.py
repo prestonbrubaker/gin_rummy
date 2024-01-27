@@ -1,4 +1,5 @@
 import random
+import time
 
 def create_shuffled_deck():
     # Initialize deck
@@ -145,4 +146,35 @@ print("DECK AFTER FLIPPING: \n" + str(readable_deck) + "\n\n")
 print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
 print("\n\nLET'S BEGIN THE GAME!!!\n\n")
 print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n")
+
+game_in_progress = True
+while game_in_progress:
+    print("\nSTEP 1: PLAYER 1 MUST CHOOSE TO PICK UP FROM DECK OR DISCARD\n")
+    choice = random.randint(0,1)    # 0 -> deck, 1 -> discard
+    if(choice == 0):
+        print("\nPLAYER 1 HAS CHOSEN TO PICK UP FROM THE DECK")
+        player_one_hand.append(deck[0])
+        deck.pop(0)
+        
+        readable_deck = read_deck(deck)
+        print("DECK AFTER PLAYER TOOK TOP CARD: \n" + str(readable_deck) + "\n\n")
+
+        readable_p1_deck = read_deck(player_one_hand)
+        print("PLAYER 1s HAND AFTER TAKING TOP CARD FROM DECK: \n" + str(readable_p1_deck) + "\n\n")
+        
+    else:
+        print("\nPLAYER 1 HAS CHOSEN TO PICK UP FROM THE DISCARD PILE")
+        player_one_hand.append(discard_pile[0])
+        discard_pile.pop(0)
+
+        readable_discard_pile = read_deck(discard_pile)
+        print("DISCARD PILE AFTER PLAYER TOOK TOP CARD: \n" + str(readable_discard_pile) + "\n\n")
+
+        readable_p1_deck = read_deck(player_one_hand)
+        print("PLAYER 1s HAND AFTER TAKING TOP CARD FROM DISCARD PILE: \n" + str(readable_p1_deck) + "\n\n")
+
+    time.sleep(1)
+        
+        
+
 
