@@ -110,7 +110,7 @@ for i in range(20):
         player_two_hand.append(shuffled_deck[i])
         print("Player 2 dealt " + card_to_string(shuffled_deck[i]))
 
-# Remove dealt card from the deck to create deck
+# Remove dealt cards from the deck to create deck
 deck = []
 
 
@@ -124,7 +124,12 @@ for i in range(19, -1, -1):
 readable_deck = read_deck(deck)
 print("\n\nDECK AFTER DEALING: \n" + str(readable_deck) + "\n\n")
 
-# Create 
+# Print each player's hand
+
+readable_p1_deck = read_deck(player_one_hand)
+readable_p2_deck = read_deck(player_two_hand)
+print("PLAYER 1s HAND: \n" + str(readable_p1_deck) + "\n\n")
+print("PLAYER 2s HAND: \n" + str(readable_p2_deck) + "\n\n")
 
     
     
