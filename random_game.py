@@ -116,7 +116,7 @@ deck = shuffled_deck
 print(deck)
 for i in range(19, -1, -1):
     deck[i].pop()
-
+print(deck)
 readable_deck = read_deck(deck)
 print("DECK AFTER DEALING: + \n" + str(readable_deck))
 
