@@ -141,5 +141,8 @@ print("CARD IN DISCARD PILE TO START: \n" + str(readable_discard_pile) + "\n\n")
 
 readable_deck = read_deck(deck)
 print("DECK AFTER FLIPPING: \n" + str(readable_deck) + "\n\n")
-    
-    
+
+print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+print("\n\nLET'S BEGIN THE GAME!!!\n\n")
+print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+
