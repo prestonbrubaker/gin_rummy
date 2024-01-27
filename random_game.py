@@ -76,3 +76,4 @@ def read_deck(deck):
 # Create and read a shuffled deck
 shuffled_deck = create_shuffled_deck()
 readable_shuffled_deck = read_deck(shuffled_deck)
+print(readable_shuffled_deck)
