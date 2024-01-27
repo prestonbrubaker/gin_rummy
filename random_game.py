@@ -96,7 +96,7 @@ def read_deck(deck):
 shuffled_deck = create_shuffled_deck()
 readable_shuffled_deck = read_deck(shuffled_deck)
 print("BINARY ENCODED SHUFFLED DECK: \n" + str(shuffled_deck) + "\n\n")
-print("READABLE SHUFFLED DECK: \n" + str(readable_shuffled_deck))
+print("READABLE SHUFFLED DECK: \n" + str(readable_shuffled_deck) + "\n\n")
 
 player_one_hand = []
 player_two_hand = []
@@ -122,7 +122,7 @@ for i in range(19, -1, -1):
     deck.pop(i)
 
 readable_deck = read_deck(deck)
-print("DECK AFTER DEALING: \n" + str(readable_deck) + "\n\n")
+print("\n\nDECK AFTER DEALING: \n" + str(readable_deck) + "\n\n")
 
     
     
