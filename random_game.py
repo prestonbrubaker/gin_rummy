@@ -124,5 +124,7 @@ for i in range(19, -1, -1):
 readable_deck = read_deck(deck)
 print("\n\nDECK AFTER DEALING: \n" + str(readable_deck) + "\n\n")
 
+# Create 
+
     
     
