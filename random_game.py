@@ -193,7 +193,7 @@ while game_in_progress:
 
         
 
-    time.sleep(1)
+    #time.sleep(1)
 
     print("\n\nSTEP 3: PLAYER 1 MUST CHOOSE WHICH CARD TO DISCARD\n\n")
 
@@ -256,7 +256,7 @@ while game_in_progress:
 
         
 
-    time.sleep(1)
+    #time.sleep(1)
 
     print("\n\nSTEP 6: PLAYER 2 MUST CHOOSE WHICH CARD TO DISCARD\n\n")
 
